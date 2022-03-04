@@ -1,6 +1,8 @@
 # FadeCandy_RhornM00714995
 README
+
 RHORN’S AUTOMOTIVE DEALERSHIP
+
 The aim of this dealership is to not only sell you a car or service your vehicle but also help educate you on the origins and development of your vehicle. 
 Majority of the times, individuals purchase a vehicle with no prior knowledge of the car or the country it originated from.
 This is a more personal and involved service where you get to experience and be part of the entire process. At our dealership, we will take you through 
@@ -33,6 +35,7 @@ To pick a car option type the number of your choice and press Enter.
 3. Chevrolet 
 4. Service
 5. Exit
+
 After being presented with this screen you type the number which corresponds to the option you would like to select. For example, if you would like to choose Lexus,
 you type the number 2 then press ENTER. This will then run you through the series of animations which are programmed under the Lexus. When the animations are complete you 
 will be redirected to the options menu to select another option or EXIT the menu. 
