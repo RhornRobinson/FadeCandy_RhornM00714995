@@ -52,7 +52,7 @@ This is the program which will enable you to run the code. This can be downloade
 2.	The LED simulator which is needed to observe the animations. The simulator provided has 360 LEDs arranged in a grid pattern of 6 rows with 60 LEDs each.
  The simulator together with the opc file can be found in folder labelled “Files needed For FadeCandy”
 
-3.	Code The code can be copied from GitHub file labelled “Rhorn’s Automotive Showroom”
+3.	Code The code can be copied from GitHub file labelled “Rhorn’s Automotive Showroom.py”
 
 
 
