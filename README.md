@@ -21,10 +21,12 @@ will be displayed.
 Option 5- Exit. This option exits the online/virtual showroom.
 
 RUNNING THE SHOWROOM:
+
 After all the software has been successfully installed, we run python and upload the code which was downloaded from the link above followed by the LED simulator. 
 After running python, you should be greeted with an introductory menu with 5 options.
 
-RHORN'S AUTOMOTIVE DEALERSHIP
+RHORN'S AUTOMOTIVE DEALERSHIP:
+
 To pick a car option type the number of your choice and press Enter.
 1. Mercedes
 2. Lexus
@@ -36,8 +38,10 @@ you type the number 2 then press ENTER. This will then run you through the serie
 will be redirected to the options menu to select another option or EXIT the menu. 
 To exit the menu, just enter the number 5 and press ENTER. This will log you out of the showroom.     
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------- 
-REQUIREMENTS
+REQUIREMENTS:
+
 To run the online/virtual showroom you need to have the following:
+
 1.	Python Software
 This is the program which will enable you to run the code. This can be downloaded here; https://www.python.org/downloads/
 
@@ -49,8 +53,9 @@ This is the program which will enable you to run the code. This can be downloade
 
 
 
-ABOUT FADECANDY SIMULATOR
- The simulator provided has 360 LEDs arranged in a grid pattern of 6 rows with 60 LEDs each.
+ABOUT FADECANDY SIMULATOR:
+
+The simulator provided has 360 LEDs arranged in a grid pattern of 6 rows with 60 LEDs each.
 Explanation of some of the basic commands necessary in Fadecandy code:
 
 opc. Client() - sets up a client object that will establish communication between Python and a fadecandy server.
