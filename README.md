@@ -38,8 +38,9 @@ To pick a car option type the number of your choice and press Enter.
 
 After being presented with this screen you type the number which corresponds to the option you would like to select. For example, if you would like to choose Lexus,
 you type the number 2 then press ENTER. This will then run you through the series of animations which are programmed under the Lexus. When the animations are complete you 
-will be redirected to the options menu to select another option or EXIT the menu. 
- To exit the menu, just enter the number 5 and press ENTER. This will log you out of the showroom.     
+will be redirected to the options menu to select another option or EXIT the menu.
+To exit the menu, just enter the number 5 and press ENTER, This will log you out of the showroom
+
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------- 
 REQUIREMENTS:
 
