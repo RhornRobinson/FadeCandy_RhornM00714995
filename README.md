@@ -25,12 +25,12 @@ After all the software has been successfully installed, we run python and upload
 After running python, you should be greeted with an introductory menu with 5 options.
 
 RHORN'S AUTOMOTIVE DEALERSHIP
-                	 To pick a car option type the number of your choice and press Enter.
-                	 1. Mercedes
-                	 2. Lexus
-                	 3. Chevrolet
-                	 4. Service
-                	 5. Exit
+To pick a car option type the number of your choice and press Enter.
+1. Mercedes
+2. Lexus
+3. Chevrolet 
+4. Service
+5. Exit
 After being presented with this screen you type the number which corresponds to the option you would like to select. For example, if you would like to choose Lexus,
 you type the number 2 then press ENTER. This will then run you through the series of animations which are programmed under the Lexus. When the animations are complete you 
 will be redirected to the options menu to select another option or EXIT the menu. 
