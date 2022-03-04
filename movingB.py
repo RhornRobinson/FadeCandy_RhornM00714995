@@ -6,7 +6,7 @@ import random
 import winsound
 #import gui
 led = 0
-
+endpoint1 = 149
 
 leds = [(255,255,255)]*360 #white
 
@@ -16,11 +16,58 @@ client.put_pixels(leds)
 
 
 def func1 ():
+##--------------------buliding wrench -------------------------
+    led = 0
+    while led<15:
+        for leds in range (59):
+            leds = [(0,0,0)]*360
+            leds[179-led] = (219,226,223)
+            leds[120+led] = (219,226,223)
+            leds[239-led] = (219,226,223)
+            leds[180+led] = (219,226,223)
+            leds[178-led] = (219,226,223)
+            leds[121+led] = (219,226,223)
+            leds[238-led] = (219,226,223)
+            leds[181+led] = (219,226,223)
+        for leds in  range (35):
+            leds[177-led] = (201,212,238)
+            leds[122+led] = (201,212,238)
+            leds[237-led] = (201,212,238)
+            leds[182+led] = (201,212,238)
+            
+            if led == endpoint1: 
+                sleep (.1)
+            
+
+                        
+            time.sleep(.1)
+            client.put_pixels(leds)
+            led = led + 1 #or reverse if you want
+            
+##--------------------MERCEDES NAME -------------------------------------
+#    led = 0
+#    while led<352:
+#        for led in range (359):
+#            leds = [(0,0,0)]*360
+#            leds[0+led] = (255,255,0)
+#            leds[1+led] = (255,255,0)
+#            leds[60+led+60] = (255,255,0)
+#            leds[61+led+60] = (255,255,0)
+#            leds[120+led+60] = (255,255,0)
+#            leds[121+led+60] = (255,255,0)
+#            leds[180+led+60] = (255,255,0)
+#            leds[181+led+60] = (255,255,0)
+#            client.put_pixels(leds)
+#            time.sleep(.1)
+#        break
+
+#    client.put_pixels(leds)
+            
 
 ##--------------------MOVING B ANIMATION --------------------------------
     led = 0
     while led<60:                 
-        for led in range(52):   
+        for led in range(32):   
             leds = [(0,0,0)]*360    
             leds[351-led] = (255,0,0)
             leds[351-led+2] = (255,0,0)
@@ -36,6 +83,7 @@ def func1 ():
             leds[111-led] = (255,0,0)
             leds[111-led+2] = (255,0,0)
             leds[111-led+4] = (255,0,0)
+        
             client.put_pixels(leds)
             time.sleep(.1)
         break
@@ -253,30 +301,43 @@ def func1 ():
         
         
 def func2 ():
-
+#---------------------M--------------------------
+    while True:                         #do this forever:
+        rand_color = (random.randint(0,255),random.randint(0,255),random.randint(0,255))
+        for led in range(360):
+            leds = [(255,255,255)]*360  #white  #set everything white,
+            rand_color = (random.randint(rand_color[0]-50, rand_color[0]+50),random.randint(rand_color[1]-50, rand_color[1]+50),random.randint(rand_color[2]-20, rand_color[2]+20))
+            leds[355-led] = rand_color       #set 5 leds another colour, incrementing position each frame
+            leds[355-led+1] = rand_color
+            leds[355-led+2] = rand_color
+            leds[355-led+3] = rand_color
+            leds[355-led+4] = rand_color
+            if led == 355:              #if we reach the end go back;
+                led = 0
+            client.put_pixels(leds)     #place the latest frame on screen.
+        time.sleep(0.1)            #delay the frame a bit
+#-----------------------E------------------------
     led = 0
-    while led<60:                 
-            for led in range(52):   
+    while led<7:                 
+            for led in range(59):   
                 leds = [(0,0,0)]*360    
-                leds[351-led] = (255,0,0)
-                leds[351-led+2] = (255,0,0)
-                leds[351-led+4] = (255,0,0)
-                leds[291-led] = (255,0,0)
-                leds[291-led+6] = (255,0,0)
-                leds[231-led] = (255,0,0)
-                leds[231-led+4] = (255,0,0)
-                leds[231-led+3] = (255,0,0)
-                leds[231-led+2] = (255,0,0)
-                leds[171-led] = (255,0,0)
-                leds[171-led+6] = (255,0,0)
-                leds[111-led] = (255,0,0)
-                leds[111-led+2] = (255,0,0)
-                leds[111-led+4] = (255,0,0)
+                leds[10-led-3] = (255,0,0)
+                leds[11-led-3] = (255,0,0)
+                leds[12-led-3] = (255,0,0)
+                leds[13-led-3] = (255,0,0)
+                leds[70-led-3] = (255,0,0)
+                leds[130-led-3] = (255,0,0)
+                leds[131-led-3] = (255,0,0)
+                leds[190-led-3] = (255,0,0)
+                leds[191-led-3] = (255,0,0)
+                leds[250-led-3] = (255,0,0)
+                leds[310-led-3] = (255,0,0)
+                leds[311-led-3] = (255,0,0)
+                leds[312-led-3] = (255,0,0)
+                leds[313-led-3] = (255,0,0)
                 client.put_pixels(leds)
                 time.sleep(.1)
             break
-
-
      
         
     
@@ -291,44 +352,170 @@ def func2 ():
         
  
 
-##------------------------------------------>>  ANIMATIONS FOR CHEVROLET <<---------------------------------------------------------------##
+#------------->>  ANIMATIONS FOR FLASHING FAULT SIGNS ( BATTERY & ENGINE WARNING LIGHT <<---------------------------------------------------------------##
 def func3 ():
     
-##--------------------MOVING B ANIMATION --------------------------------
+##--------------------FLASHING BATTERY ANIMATION --------------------------------
+    t = 1
     led = 0
-    while led<60:                 
-        for led in range(52):   
+    while t<50:
+        rand_color = (random.randint(255,255),random.randint(99,215),random.randint(0,80))
+        for led in range(1):   
             leds = [(0,0,0)]*360    
-            leds[351-led] = (255,0,0)
-            leds[351-led+2] = (255,0,0)
-            leds[351-led+4] = (255,0,0)
-            leds[291-led] = (255,0,0)
-            leds[291-led+6] = (255,0,0)
-            leds[231-led] = (255,0,0)
-            leds[231-led+4] = (255,0,0)
-            leds[231-led+3] = (255,0,0)
-            leds[231-led+2] = (255,0,0)
-            leds[171-led] = (255,0,0)
-            leds[171-led+6] = (255,0,0)
-            leds[111-led] = (255,0,0)
-            leds[111-led+2] = (255,0,0)
-            leds[111-led+4] = (255,0,0)
+            leds[4-led] = (255,165,0)
+            leds[5-led] = (255,165,0)
+            leds[11-led] = (255,165,0)
+            leds[12-led] = (255,165,0)
+            leds[62-led] = (255,165,0)
+            leds[63-led] = (255,165,0)
+            leds[64-led] = (255,165,0)
+            leds[65-led] = (255,165,0)
+            leds[66-led] = (255,165,0)
+            leds[67-led] = (255,165,0)
+            leds[68-led] = (255,165,0)
+            leds[69-led] = (255,165,0)
+            leds[70-led] = (255,165,0)
+            leds[71-led] = (255,165,0)
+            leds[72-led] = (255,165,0)
+            leds[73-led] = (255,165,0)
+            leds[74-led] = (255,165,0)
+            leds[122-led] = (255,165,0)
+            leds[131-led] = rand_color
+            leds[134-led] = (255,165,0)
+            leds[182-led] = (255,165,0)
+            leds[184-led] = rand_color
+            leds[185-led] = rand_color
+            leds[186-led] = rand_color
+            leds[190-led] = rand_color
+            leds[191-led] = rand_color
+            leds[192-led] = rand_color
+            leds[194-led] = (255,165,0)
+            leds[242-led] = (255,165,0)
+            leds[251-led] = rand_color
+            leds[254-led] = (255,165,0)
+            leds[302-led] = (255,165,0)
+            leds[303-led] = (255,165,0)
+            leds[304-led] = (255,165,0)
+            leds[305-led] = (255,165,0)
+            leds[306-led] = (255,165,0)
+            leds[307-led] = (255,165,0)
+            leds[308-led] = (255,165,0)
+            leds[309-led] = (255,165,0)
+            leds[310-led] = (255,165,0)
+            leds[311-led] = (255,165,0)
+            leds[312-led] = (255,165,0)
+            leds[313-led] = (255,165,0)
+            leds[314-led] = (255,165,0)
+            
+
+       ##---------ENGINE WARNING LIGHT --------------##
+        rand_color = (random.randint(255,255),random.randint(99,215),random.randint(0,80))
+        for led in range(1):   
+            leds[48-led] = rand_color
+            leds[49-led] = rand_color
+            leds[50-led] = rand_color
+            leds[51-led] = rand_color
+            leds[52-led] = rand_color
+            leds[110-led] = rand_color
+            leds[165-led] = rand_color
+            leds[167-led] = rand_color
+            leds[168-led] = rand_color
+            leds[169-led] = rand_color
+            leds[170-led] = rand_color
+            leds[171-led] = rand_color
+            leds[172-led] = rand_color
+            leds[173-led] = rand_color
+            leds[174-led] = rand_color
+            leds[175-led] = rand_color
+            leds[177-led] = rand_color
+            leds[225-led] = rand_color
+            leds[226-led] = rand_color
+            leds[235-led] = rand_color
+            leds[236-led] = rand_color
+            leds[237-led] = rand_color
+            leds[285-led] = rand_color
+            leds[287-led] = rand_color
+            leds[295-led] = rand_color
+            leds[296-led] = rand_color
+            leds[297-led] = rand_color
+            leds[348-led] = rand_color
+            leds[349-led] = rand_color
+            leds[350-led] = rand_color
+            leds[351-led] = rand_color
+            leds[352-led] = rand_color
+            leds[353-led] = rand_color
+            leds[354-led] = rand_color
+            leds[355-led] = rand_color
+            leds[357-led] = rand_color
+                        
+     ##-----------------FAULT ---------------------------------##      
+            
+        rand_color = (random.randint(220,255),random.randint(0,69),random.randint(0,60))
+        for led in range(1):
+            
+            leds[19-led] = rand_color
+            leds[20-led] = rand_color
+            leds[21-led] = rand_color
+            leds[78-led] = rand_color
+            leds[81-led] = rand_color
+            leds[137-led] = rand_color
+            leds[138-led] = rand_color
+            leds[139-led] = rand_color
+            leds[143-led] = rand_color
+            leds[144-led] = rand_color
+            leds[147-led] = rand_color
+            leds[150-led] = rand_color
+            leds[152-led] = rand_color
+            leds[157-led] = rand_color
+            leds[158-led] = rand_color
+            leds[159-led] = rand_color
+            leds[160-led] = rand_color
+            leds[161-led] = rand_color
+            leds[198-led] = rand_color
+            leds[202-led] = rand_color
+            leds[205-led] = rand_color
+            leds[207-led] = rand_color
+            leds[210-led] = rand_color
+            leds[212-led] = rand_color
+            leds[219-led] = rand_color
+            leds[258-led] = rand_color
+            leds[262-led] = rand_color
+            leds[263-led] = rand_color
+            leds[264-led] = rand_color
+            leds[265-led] = rand_color
+            leds[267-led] = rand_color
+            leds[270-led] = rand_color
+            leds[272-led] = rand_color
+            leds[279-led] = rand_color
+            leds[318-led] = rand_color
+            leds[322-led] = rand_color
+            leds[325-led] = rand_color
+            leds[327-led] = rand_color
+            leds[328-led] = rand_color
+            leds[329-led] = rand_color
+            leds[330-led] = rand_color
+            leds[332-led] = rand_color
+            leds[333-led] = rand_color
+            leds[334-led] = rand_color
+            leds[335-led] = rand_color
+            leds[339-led] = rand_color
             client.put_pixels(leds)
             time.sleep(.1)
-        break
+            t=t+1
 
-    client.put_pixels(leds)   
+        client.put_pixels(leds)   
         
 
 
     
 while True:
-    value = input ( ''' RHORN'S CAR SHOWROOM
+    value = input ( ''' RHORN'S AUTOMOTIVE DEALERSHIP
                 \t To pick a car option type the number of your choice and press Enter.
                 \t 1. Mercedes
                 \t 2. Lexus
                 \t 3. Chevrolet
-                \t 4. Exit
+                \t 4. Service
+                \t 5. Exit
                  ''')
     
     if value.isdigit() == True: # .isdigit()
@@ -339,11 +526,13 @@ while True:
             func2()
         elif choice ==3 :  # Run animations for Chevrolet
             func3()
-        elif choice ==4 :  # Display text to exit showroom
+        elif choice ==4 :  # Run animations for Service
+            func3()
+        elif choice ==5 :  # Display text to exit showroom
             print (" You have now EXITED the online showroom...Thank You")
             break
         else:
             print("Invalid input, please provide an number from the list of cars above:")
-    else:
-        value=input("Invalid input, please provide a number from 1 to 3.")
-        break
+            if value== chr:
+                print("Invalid input, please provide a number from 1 to 3.")
+            
